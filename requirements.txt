@@ -1,0 +1,1 @@
+-e git+https://github.com/icpc-jag/rime.git#egg=2.0.dev1
