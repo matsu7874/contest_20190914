@@ -10,3 +10,6 @@ script:
 notifications:
   slack:
     secure: jXN9bpwLp8ncJL+pBi2+djPNdJ+R7RE1/tevyKK76l6icBRa8w8YkBXtx1jf9XlBKM+U3q/XumEHtQ5meBpynyPkrB41fRn17VMZeN36HgKazjhPUQwhcMHJuDu50PEPJ/l2XYmftFSS3aO4YfPw1W6Nw/w5Gy8+b+FJ0k6Uy9XTMd1p7Ypiy7qkOYScwqdCa5Q2RAPeJ8x/y6W5rCsuKCbduWxh0SJfLRafQm3Ge9b6Ip4nWZ7/hi9kxYWW9zb3TeJ8AWvAvw6YcP2Xpa8Oav1ek3fedMQuDZC3cNRR0fn/nAEnJ7RH0yHiNa8Gkj7rh8bfIF1ohFTvxf1TqWGOQx/lHzqHXCsgxADriaJgmy3oQpUa4KL0sSE7uzSoN2czWKefjKg/zp9drrK4qPX60sFJ6iDOrrpk1eozG1qCyRJJEo85tM0Akvv3zGFjyRAb62357/ac1QtzhqL4an4NqtvM8El66VDATPLmP9e5etbWTu30JDxOfGFQP3Qlj8r9gI6PQoV9CV5CIYMtjllSguJZlfMawMg7wTFVGoKGnhW91PHFpVuH1W82hk8c7d5ylQLraXwcdjOt+0RM27mbYPqcK34SuFzL8wPG1pYErefNL4Z8f5YVsxFQlSx1tzNR4PnTjaKhbuVUzT1I03J+riu3lWlg/3xG5X5CWsCWH2A=
+  template:
+    - "Build <%{build_url}|#%{build_number}> of %{repository_slug}@%{branch} by %{author} %{result} in %{duration}"
+    - "<%{compare_url}|%{commit}>: <%{commit_subject}>"
