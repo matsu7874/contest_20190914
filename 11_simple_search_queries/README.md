@@ -17,11 +17,12 @@ simple search queries
 ## Input Format
 
 ```
-N K
-v_1 a_1 c_1
-v_2 a_2 c_2
+S
+Q
+q_1
+q_2
 ...
-v_N a_N c_N
+q_Q
 ```
 
 ## Constraints
