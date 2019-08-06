@@ -24,10 +24,7 @@ mneme game
 N
 S
 Q
-q_1
-q_2
-...
-q_Q
+q_1 q_2 ... q_Q
 ```
 
 ## Constraints
@@ -57,9 +54,7 @@ ans_Q
 4
 ABCA
 3
-2
-6
-10
+2 6 10
 ```
 
 ```
