@@ -16,7 +16,7 @@ signed main(int argc, char* argv[]) {
 
   long long maxq = (n * (n + 1)) / 2;
   vector<long long> qs = inf.readLongs(q, 1, maxq, "qs");
-  // inf.readEoln();
+  inf.readEoln();
   inf.readEof();
 
   return 0;

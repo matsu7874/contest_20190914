@@ -80,4 +80,4 @@ while random_cases < RANDOM_TESTCASES:
 
 for i, s in enumerate(list(testcases)):
     with open('input_{}.in'.format(i), 'w') as fout:
-        fout.write(s)
+        fout.write(s + '\n')

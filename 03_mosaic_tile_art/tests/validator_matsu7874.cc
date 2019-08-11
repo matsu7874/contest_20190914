@@ -10,7 +10,7 @@ signed main(int argc, char* argv[]) {
   registerValidation(argc, argv);
 
   int n = inf.readInt(MIN_N, MAX_N, "N");
-  //   inf.readEoln();
+  inf.readEoln();
   inf.readEof();
   return 0;
 }

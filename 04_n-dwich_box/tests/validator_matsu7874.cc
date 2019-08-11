@@ -11,7 +11,7 @@ signed main(int argc, char* argv[]) {
   assert(regex_match(s, ndwich));
   regex db("\#\#");
   assert(!regex_search(s, db));
-  // inf.readEoln();
+  inf.readEoln();
 
   inf.readEof();
   return 0;

@@ -69,4 +69,4 @@ for _ in range(RANDOM_QUERY_RANDOM_STR_LARGE_TESTCASES):
 
 for i, case in enumerate(list(testcases)):
     with open('input_{}.in'.format(i), 'w') as fout:
-        fout.write(str(case))
+        fout.write(str(case) + '\n')

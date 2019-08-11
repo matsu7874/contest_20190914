@@ -20,7 +20,7 @@ signed main(int argc, char* argv[]) {
   for (int i = 0; i < q - 1; i++) {
     assert(qs[i] < qs[i + 1]);
   }
-  // inf.readEoln();
+  inf.readEoln();
 
   inf.readEof();
   return 0;
