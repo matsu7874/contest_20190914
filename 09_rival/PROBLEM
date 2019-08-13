@@ -1,0 +1,14 @@
+# -*- coding: utf-8; mode: python -*-
+
+pid='I'
+
+problem(
+  time_limit=2.0,
+  id=pid,
+  title=pid + ": rival",
+  reference_solution='matsu7874_cpp_TLE',
+  )
+
+atcoder_config(
+  task_id=None # None means a spare
+)
