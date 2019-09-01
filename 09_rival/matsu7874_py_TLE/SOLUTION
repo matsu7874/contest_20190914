@@ -1,9 +1,8 @@
-# -*- coding: utf-8; mode: python -*-
 
 ## Solution
-script_solution(src='bruteforce.py', challenge_cases=[]) # shebang line is required
-
-## Score
-#expected_score(100)
+script_solution(
+    src='bruteforce.py',
+    challenge_cases=[]
+) # shebang line is required
 
 expected_verdicts([TLE, AC])

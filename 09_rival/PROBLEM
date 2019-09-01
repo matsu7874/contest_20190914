@@ -6,7 +6,7 @@ problem(
   time_limit=2.0,
   id=pid,
   title=pid + ": rival",
-  reference_solution='matsu7874_cpp_TLE',
+  reference_solution='matsu7874_AC',
   )
 
 atcoder_config(
