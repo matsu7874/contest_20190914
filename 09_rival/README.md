@@ -24,7 +24,7 @@ P_N L_N R_N
 ## Constraints
 
 - 入力はすべて整数 
-- `2 <= N <= 10^5`
+- `2 <= N <= 5*10^4`
 - `0 <= L_i <= P_i <= R_i <= 10^3`
 
 ## Output Format

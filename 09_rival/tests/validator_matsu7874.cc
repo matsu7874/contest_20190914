@@ -4,7 +4,7 @@
 using namespace std;
 
 const int MIN_N = 2;
-const int MAX_N = 100000;
+const int MAX_N = 50000;
 const long MIN_L = 0;
 const long MAX_L = 10000;
 const long MIN_P = 0;

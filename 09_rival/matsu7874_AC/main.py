@@ -1,7 +1,4 @@
-#!/usr/bin/env python
-import heapq
-import collections
-
+#!/usr/bin/env pypy3
 L = 0
 P = 1
 R = 2
@@ -23,9 +20,7 @@ class SegmentTree:
             return self.data[k]
         else:
             m = (l+r) >> 1
-            child_left = self._query(a, b, (k << 1)+1, l, m)
-            child_right = self._query(a, b, (k << 1)+2, m, r)
-            return child_left + child_right
+            return self._query(a, b, (k << 1)+1, l, m) + self._query(a, b, (k << 1)+2, m, r)
 
     def query(self, a: int, b: int):
         """半開区間[a, b)のquery結果を返す。
@@ -56,31 +51,26 @@ def main():
     n = int(input())
     gorillas = []
     commands = []
-    values = set()
     for i in range(n):
         p, l, r = map(int, input().split())
         gorillas.append((p, l, r))
         commands.append((l, L, i))
         commands.append((p, P, i))
         commands.append((r, R, i))
-        values.add(p)
-        values.add(l)
-        values.add(r)
-    values = {v: i for i, v in enumerate(sorted(list(values)))}
     commands.sort()
-    # ライバルゴリラの範囲分布を管理[l,r]
 
     total = 0
-    acceptable = SegmentTree(len(values))
+    # ライバルゴリラの範囲分布を管理[l,r]
+    acceptable = SegmentTree(3001)
     for _, c, i in commands:
         if c == 0:
             # ライバル認定下限の低い順にセグ木に追加
-            acceptable.add(values[gorillas[i][0]], 1)
+            acceptable.add(gorillas[i][0], 1)
         elif c == 1:
             l, r = gorillas[i][1], gorillas[i][2]
-            total += acceptable.query(values[l], values[r]+1)
+            total += acceptable.query(l, r+1)
         else:
-            acceptable.add(values[gorillas[i][0]], -1)
+            acceptable.add(gorillas[i][0], -1)
     print((total-n)//2)
 
 
