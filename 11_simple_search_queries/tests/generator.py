@@ -81,7 +81,62 @@ testcases.append(Case(random_letters(N_MAX),
     [random_letters(5) for _ in range(SUM_MAX // 5)],
 label))
 
-# TODO other cases
+#large 'YES' cases
+def large_yes_case():
+    S = random_letters(N_MAX)
+    queries = []
+    sumlen = 0
+    while 1:
+        l = ri(1,len(S))
+        if sumlen + l > SUM_MAX: break
+        sumlen += l
+        a = ri(0,N_MAX - l)
+        q = S[a:a+l]
+        queries.append(q)
+    return Case(S, queries, 'large_yes')
+
+for _ in range(5):
+    testcases.append(large_yes_case())
+
+#large 'NO' cases
+def large_no_case():
+    S = random_letters(N_MAX)
+    queries = []
+    sumlen = 0
+    while 1:
+        l = ri(1,len(S))
+        if sumlen + l > SUM_MAX: break
+        sumlen += l
+        a = ri(0,N_MAX - l)
+        q = S[a:a+l-1] + ('b' if S[a+l-1] == 'a' else 'b')
+        queries.append(q)
+    return Case(S, queries, 'large_no')
+
+for _ in range(5):
+    testcases.append(large_no_case())
+
+#large random cases
+def large_random_case():
+    fr, to = ri(0,25), ri(0,25)
+    if fr > to: fr,to = to,fr
+    S = random_letters(N_MAX, chr(ord('a')+fr), chr(ord('a')+to))
+    queries = []
+    sumlen = 0
+    while 1:
+        l = ri(1,len(S))
+        if sumlen + l > SUM_MAX: break
+        sumlen += l
+        a = ri(0,N_MAX - l)
+        is_yes = ri(0, 1)
+        if is_yes:
+            q = S[a:a+l]
+        else:
+            q = S[a:a+l-1] + ('b' if S[a+l-1] == 'a' else 'b')
+        queries.append(q)
+    return Case(S, queries, 'large_random')
+
+for _ in range(10):
+    testcases.append(large_random_case())
 
 #output
 from collections import Counter
