@@ -5,6 +5,8 @@ string S;
 int Q;
 
 int main() {
+  ios::sync_with_stdio(false);
+  cin.tie(nullptr);
   cin >> S;
   cin >> Q;
   for(int i=0; i<Q; i++) {
