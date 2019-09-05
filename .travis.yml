@@ -1,4 +1,4 @@
-dist: bionic
+# dist: bionic
 language: python
 cache: bundler
 python:
@@ -11,6 +11,8 @@ addons:
     packages:
       - mono-devel
       - pypy3
+before_install:
+-
 install:
 - pip install -r requirements.txt
 script:
