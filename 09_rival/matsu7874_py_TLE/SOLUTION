@@ -1,0 +1,8 @@
+
+## Solution
+script_solution(
+    src='bruteforce.py',
+    challenge_cases=[]
+) # shebang line is required
+
+expected_verdicts([TLE, AC])
