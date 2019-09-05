@@ -1,4 +1,3 @@
-# dist: bionic
 language: python
 cache: bundler
 python:
@@ -6,13 +5,10 @@ python:
 addons:
   apt:
     sources:
-      - ubuntu-toolchain-r-test
       - pypy
     packages:
       - mono-devel
       - pypy3
-before_install:
--
 install:
 - pip install -r requirements.txt
 script:
