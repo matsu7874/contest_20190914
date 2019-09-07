@@ -27,13 +27,13 @@ def random_odd(lo,hi):
 
 testcases = []
 #sample cases
-label = 'sample'
+label = '00_sample'
 testcases.append(Case(3, 3, 1, 2, label))
 testcases.append(Case(5, 3, 2, 2, label))
 testcases.append(Case(N_MAX, 500, 255, 243, label))
 
 #impossible cases
-label = 'impossible'
+label = '10_impossible'
 testcases.append((Case(N_MIN, 3, 1, 3, label)))
 testcases.append((Case(N_MIN, 3, 3, 1, label)))
 testcases.append((Case(N_MIN, 4, 1, 4, label)))
@@ -57,14 +57,14 @@ RANDOM_NARROW_CASES = 10
 RANDOM_ONE_SIDE_NARROW_CASES = 7
 
 #wide cases
-label = 'wide'
+label = '20_wide'
 testcases.append((Case(N_MIN, 100, 50, 50, label)))
 testcases.append((Case(111, M_MAX, 33333, 33321, label)))
 testcases.append((Case(333, M_MAX, 77777, 77700, label)))
 testcases.append((Case(N_MAX, M_MAX, 55555, 55678, label)))
 testcases.append((Case(N_MAX, M_MAX, 10000, 10000+N_MAX-2, label)))
 
-label = 'random_wide'
+label = '21_random_wide'
 for _ in range(RANDOM_WIDE_CASES):
     ab_lower_lim = N_MAX+10
     ab_higher_lim = M_MAX-N_MAX-10
@@ -75,13 +75,13 @@ for _ in range(RANDOM_WIDE_CASES):
     testcases.append(Case(N, M, A, B, label))
 
 #narrow cases
-label = 'narrow'
+label = '22_narrow'
 testcases.append((Case(5, M_MIN, 1, 2, label)))
 testcases.append((Case(111, 20, 5, 15, label)))
 testcases.append((Case(333, 80, 7, 77, label)))
 testcases.append((Case(N_MAX, M_MIN, 2, 2, label)))
 
-label = 'random_narrow'
+label = '23_random_narrow'
 for _ in range(RANDOM_NARROW_CASES):
     N = random_odd(N_MIN+2, N_MAX)
     M = ri(M_MIN, N//2+1)
@@ -90,13 +90,13 @@ for _ in range(RANDOM_NARROW_CASES):
     testcases.append(Case(N, M, A, B, label))
 
 #left-narrow cases
-label = 'left_narrow'
+label = '24_left_narrow'
 testcases.append((Case(5, 80, 1, 2, label)))
 testcases.append((Case(99, M_MAX, 33, 22, label)))
 testcases.append((Case(111, M_MAX, 1, 1, label)))
 testcases.append((Case(333, M_MAX, 100, 50, label)))
 
-label = 'random_left_narrow'
+label = '25_random_left_narrow'
 for _ in range(RANDOM_ONE_SIDE_NARROW_CASES):
     N = random_odd(N_MIN+2, N_MAX)
     M = ri(N, M_MAX)
@@ -108,7 +108,7 @@ for _ in range(RANDOM_ONE_SIDE_NARROW_CASES):
 right_narrow_cases = []
 for case in testcases:
     if not case.label.endswith('left_narrow'): continue
-    label = case.label.replace('left', 'right')
+    label = case.label.replace('left', 'right').replace('24','26').replace('25','27')
     right_narrow_cases.append(Case(case.N, case.M, case.M - case.A + 1, case.M - case.B + 1, label))
 testcases += right_narrow_cases
 

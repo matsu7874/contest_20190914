@@ -21,7 +21,7 @@ class Case:
 
 testcases = []
 #sample cases
-label = 'sample'
+label = '00_sample'
 testcases.append(Case(4, [
     (8,1,1),(1,4,1),(1,1,3),(1,2,1),(1,1,1),(99,1,1)
 ], label))
@@ -36,7 +36,7 @@ testcases.append(Case(1, [
 ], label))
 
 #other handmade cases
-label = 'handmade'
+label = '10_handmade'
 testcases.append(Case(5, [
     (20,1,1),(1,1,70),(16,1,1),(1,5,1),(1,6,1),(1,1,2),(1,1,9)
 ], label))
@@ -83,13 +83,13 @@ def make_fixed_value_case(k,all_1,v,a,c,value,label):
     shuffle(ps)
     return Case(k,ps,label)
 
-label = 'all_1'
+label = '20_all_1'
 testcases.append(make_random_value_case(8,16,0,0,0,label))
 testcases.append(make_random_value_case(32,32,0,0,0,label))
 testcases.append(make_random_value_case(999,N_MAX,0,0,0,label))
 testcases.append(make_random_value_case(N_MAX,N_MAX,0,0,0,label))
 
-label = 'almost_1'
+label = '21_almost_1'
 testcases.append(make_random_value_case(15,16,3,3,3,label))
 testcases.append(make_random_value_case(16,16,3,3,3,label))
 testcases.append(make_random_value_case(17,16,3,3,3,label))
@@ -99,17 +99,17 @@ testcases.append(make_random_value_case(25,16,3,3,3,label))
 testcases.append(make_random_value_case(25,16,3,3,3,label))
 testcases.append(make_random_value_case(N_MAX-5,N_MAX-9,3,3,3,label))
 
-label = 'extreme'
+label = '22_extreme'
 testcases.append(make_fixed_value_case(N_MAX,0,N_MAX,0,0,V_MAX,label))
 testcases.append(make_fixed_value_case(N_MIN,0,0,N_MAX,0,V_MAX,label))
 testcases.append(make_fixed_value_case(50000,0,0,0,N_MAX,V_MAX,label))
 
-label = 'balanced'
+label = '23_balanced'
 testcases.append(make_random_value_case(200,10,1000,700,700,label))
 testcases.append(make_random_value_case(10000,10,10000,7000,7000,label))
 testcases.append(make_random_value_case(20000,10,10000,7000,7000,label))
 
-label = 'balanced_random'
+label = '24_balanced_random'
 for _ in range(8):
     x = ri(100, N_MAX//24)
     k = ri(N_MIN, x*24)

@@ -18,7 +18,7 @@ class Case:
 
 testcases = []
 #sample cases
-label = 'sample'
+label = '00_sample'
 testcases.append(Case([
     '.....',
     '.G.B.',
@@ -63,7 +63,7 @@ testcases.append(Case([
 ], [1,2,3,1,2,3,1,2,3], label))
 
 #other handmade cases
-label = 'handmade'
+label = '10_handmade'
 testcases.append(Case([
     'G.B.B',
     '...B.',
@@ -136,11 +136,11 @@ def make_random_case(n, label):
         cards.append(d)
     return Case([''.join(row) for row in grid], cards, label)
 
-label = 'random'
+label = '20_random'
 for n in range(N_MIN, N_MAX):
     testcases.append(make_random_case(n, label))
 
-label = 'random_max'
+label = '21_random_max'
 for _ in range(30):
     testcases.append(make_random_case(N_MAX, label))
 
