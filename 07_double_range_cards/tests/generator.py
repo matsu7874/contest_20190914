@@ -23,16 +23,16 @@ class Case:
             ret += ' '.join(map(str, qrow)) + '\n'
         return ret
 
-testcases = set()
-testcases.add(Case(
+testcases = []
+testcases.append(Case(
     [[1,7,9,3], [6,5,4,8], [2,9,1,5]],
     [[1,2,1,3,2,3,2,4]]
 ))
-testcases.add(Case(
+testcases.append(Case(
     [[1]*5 for _ in range(5)],
     [[3,3,1,5,1,5,3,3], [1,2,1,2,4,5,4,5], [1,4,2,5,1,4,2,5], [1,3,1,3,3,3,3,3]]
 ))
-testcases.add(Case([[1]], []))
+testcases.append(Case([[1]], []))
 
 def rand_pair(max_v):
     a = ri(1,max_v)
@@ -57,25 +57,25 @@ def make_random_case(r_size,c_size,q_size):
         queries.append(row)
     return Case(cards, queries)
 
-testcases.add(make_random_case(1,1,0))
-testcases.add(make_random_case(1,RC_MAX,0))
-testcases.add(make_random_case(RC_MAX,1,0))
-testcases.add(make_random_case(RC_MAX,RC_MAX,0))
+testcases.append(make_random_case(1,1,0))
+testcases.append(make_random_case(1,RC_MAX,0))
+testcases.append(make_random_case(RC_MAX,1,0))
+testcases.append(make_random_case(RC_MAX,RC_MAX,0))
 
-testcases.add(make_random_case(1,1,1))
-testcases.add(make_random_case(1,RC_MAX,1))
-testcases.add(make_random_case(RC_MAX,1,1))
-testcases.add(make_random_case(RC_MAX,RC_MAX,1))
+testcases.append(make_random_case(1,1,1))
+testcases.append(make_random_case(1,RC_MAX,1))
+testcases.append(make_random_case(RC_MAX,1,1))
+testcases.append(make_random_case(RC_MAX,RC_MAX,1))
 
 for i in range(10):
-    testcases.add(make_random_case(SMALL_RC,SMALL_RC,SMALL_Q))
+    testcases.append(make_random_case(SMALL_RC,SMALL_RC,SMALL_Q))
 for i in range(10):
-    testcases.add(make_random_case(RC_MAX,RC_MAX,SMALL_Q))
+    testcases.append(make_random_case(RC_MAX,RC_MAX,SMALL_Q))
 for i in range(10):
-    testcases.add(make_random_case(SMALL_RC,SMALL_RC,Q_MAX))
+    testcases.append(make_random_case(SMALL_RC,SMALL_RC,Q_MAX))
 for i in range(5):
-    testcases.add(make_random_case(RC_MAX,RC_MAX,Q_MAX))
+    testcases.append(make_random_case(RC_MAX,RC_MAX,Q_MAX))
 
 for i, case in enumerate(list(testcases)):
-    with open('input_{}.in'.format(i), 'w') as fout:
+    with open('input_{:03d}.in'.format(i), 'w') as fout:
         fout.write(str(case))

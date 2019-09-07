@@ -4,10 +4,10 @@ import random
 SAME_TESTCASES = 10
 DIFF_TESTCASES = 10
 
-testcases = set()
+testcases = []
 
-testcases.add('AC')
-testcases.add('ZZ')
+testcases.append('AC')
+testcases.append('ZZ')
 
 samecases = 1
 diffcases = 1
@@ -18,7 +18,7 @@ def rand_char():
 while samecases < SAME_TESTCASES:
     case = rand_char()*2
     if case in testcases: continue
-    testcases.add(case)
+    testcases.append(case)
     samecases += 1
 
 while diffcases < DIFF_TESTCASES:
@@ -26,10 +26,9 @@ while diffcases < DIFF_TESTCASES:
     if r1 == r2: continue
     case = r1+r2
     if case in testcases: continue
-    testcases.add(case)
+    testcases.append(case)
     diffcases += 1
 
 for i, s in enumerate(list(testcases)):
-    with open('input_{}.in'.format(i), 'w') as fout:
+    with open('input_{:03d}.in'.format(i), 'w') as fout:
         fout.write(s + '\n')
-    

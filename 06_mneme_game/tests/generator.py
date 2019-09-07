@@ -15,9 +15,9 @@ class Case:
         ret += ' '.join(map(str, self.Q))
         return ret
 
-testcases = set()
-testcases.add(Case('ABCA', [2,6,10]))
-testcases.add(Case('Z', [1]))
+testcases = []
+testcases.append(Case('ABCA', [2,6,10]))
+testcases.append(Case('Z', [1]))
 
 def make_ordered_str(l):
     ret = ''
@@ -47,26 +47,26 @@ RANDOM_QUERY_RANDOM_STR_LARGE_TESTCASES = 5
 for _ in range(START_QUERY_RANDOM_STR_SMALL_TESTCASES):
     S = make_random_str(SMALL_SIZE)
     Q = list(range(1,SMALL_SIZE+1))
-    testcases.add(Case(S,Q))
+    testcases.append(Case(S,Q))
 
 for _ in range(END_QUERY_RANDOM_STR_SMALL_TESTCASES):
     S = make_random_str(SMALL_SIZE)
     end = SMALL_SIZE*(SMALL_SIZE+1)//2
     Q = list(range(end, end-SMALL_SIZE, -1))
-    testcases.add(Case(S,Q))
+    testcases.append(Case(S,Q))
 
 for _ in range(RANDOM_QUERY_ORDERED_STR_LARGE_TESTCASES):
     S = make_ordered_str(S_SIZE)
     n = len(S)
     Q = make_random_query(Q_SIZE, n*(n+1)//2)
-    testcases.add(Case(S,Q))
+    testcases.append(Case(S,Q))
 
 for _ in range(RANDOM_QUERY_RANDOM_STR_LARGE_TESTCASES):
     S = make_random_str(S_SIZE)
     n = len(S)
     Q = make_random_query(Q_SIZE, n*(n+1)//2)
-    testcases.add(Case(S,Q))
+    testcases.append(Case(S,Q))
 
 for i, case in enumerate(list(testcases)):
-    with open('input_{}.in'.format(i), 'w') as fout:
+    with open('input_{:03d}.in'.format(i), 'w') as fout:
         fout.write(str(case) + '\n')

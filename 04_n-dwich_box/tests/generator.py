@@ -22,26 +22,26 @@ def random_many1_sequence():
         ret += ndwich(max(1, random.randint(-30,3)))
     return ret
 
-testcases = set()
+testcases = []
 
-testcases.add('|#||#||#|#||#||||#|')
-testcases.add('|')
-testcases.add(ndwich(499))
-testcases.add(ndwich(249)*2)
-testcases.add(ndwich(1)*2)
-testcases.add(ndwich(1) + ndwich(2))
-testcases.add(ndwich(1) + ndwich(10))
-testcases.add(ndwich(2) + ndwich(1))
-testcases.add(ndwich(10) + ndwich(1))
-testcases.add(ndwich(1)*100)
-testcases.add(ndwich(2)*100)
-testcases.add(ndwich(3)*100)
-testcases.add(ndwich(1)*50 + ndwich(2)*50)
-testcases.add(ndwich(2)*50 + ndwich(3)*50)
-testcases.add(ndwich(3)*50 + ndwich(1)*50)
-testcases.add((ndwich(1) + ndwich(2)) * 50)
-testcases.add((ndwich(2) + ndwich(1)) * 50)
-testcases.add((ndwich(1) + ndwich(2) + ndwich(1)) * 50)
+testcases.append('|#||#||#|#||#||||#|')
+testcases.append('|')
+testcases.append(ndwich(499))
+testcases.append(ndwich(249)*2)
+testcases.append(ndwich(1)*2)
+testcases.append(ndwich(1) + ndwich(2))
+testcases.append(ndwich(1) + ndwich(10))
+testcases.append(ndwich(2) + ndwich(1))
+testcases.append(ndwich(10) + ndwich(1))
+testcases.append(ndwich(1)*100)
+testcases.append(ndwich(2)*100)
+testcases.append(ndwich(3)*100)
+testcases.append(ndwich(1)*50 + ndwich(2)*50)
+testcases.append(ndwich(2)*50 + ndwich(3)*50)
+testcases.append(ndwich(3)*50 + ndwich(1)*50)
+testcases.append((ndwich(1) + ndwich(2)) * 50)
+testcases.append((ndwich(2) + ndwich(1)) * 50)
+testcases.append((ndwich(1) + ndwich(2) + ndwich(1)) * 50)
 
 all_1_cases = 0
 many_1_cases = 0
@@ -51,7 +51,7 @@ random_cases = 0
 while all_1_cases < ALL_1_TESTCASES:
     case = ndwich(1) * random.randint(MIN,MAX)
     if case in testcases: continue
-    testcases.add(case)
+    testcases.append(case)
     all_1_cases += 1
 while many_1_cases < MANY_1_TESTCASES:
     case = ''
@@ -60,7 +60,7 @@ while many_1_cases < MANY_1_TESTCASES:
         if len(case) + len(add) > MAX: break
         case += add
     if case in testcases: continue
-    testcases.add(case)
+    testcases.append(case)
     many_1_cases += 1
 while single_cases < SINGLE_TESTCASES:
     r = random.randint(MIN,MAX)
@@ -74,10 +74,10 @@ while random_cases < RANDOM_TESTCASES:
         if len(case) + len(add) > MAX: break
         case += add
     if case in testcases: continue
-    testcases.add(case)
+    testcases.append(case)
     random_cases += 1
 
 
 for i, s in enumerate(list(testcases)):
-    with open('input_{}.in'.format(i), 'w') as fout:
+    with open('input_{:03d}.in'.format(i), 'w') as fout:
         fout.write(s + '\n')
