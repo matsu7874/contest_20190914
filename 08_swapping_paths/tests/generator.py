@@ -3,7 +3,7 @@ from random import randint as ri
 
 N_MAX = 499
 N_MIN = 3
-M_MAX = 10**6
+M_MAX = 10**9
 M_MIN = 2
 
 class Case:
@@ -59,10 +59,10 @@ RANDOM_ONE_SIDE_NARROW_CASES = 7
 #wide cases
 label = '20_wide'
 testcases.append((Case(N_MIN, 100, 50, 50, label)))
-testcases.append((Case(111, M_MAX, 33333, 33321, label)))
-testcases.append((Case(333, M_MAX, 77777, 77700, label)))
-testcases.append((Case(N_MAX, M_MAX, 55555, 55678, label)))
-testcases.append((Case(N_MAX, M_MAX, 10000, 10000+N_MAX-2, label)))
+testcases.append((Case(111, M_MAX, 33333333, 33333321, label)))
+testcases.append((Case(333, M_MAX, 77777777, 77777700, label)))
+testcases.append((Case(N_MAX, M_MAX, 55555555, 55555678, label)))
+testcases.append((Case(N_MAX, M_MAX, 10010000, 10010000+N_MAX-2, label)))
 
 label = '21_random_wide'
 for _ in range(RANDOM_WIDE_CASES):
